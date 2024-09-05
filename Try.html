@@ -1,0 +1,414 @@
+<html>
+ <head>
+  <title>
+   Amazon Clone
+  </title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+  <style>
+   body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2;
+        }
+        .header {
+            background-color: #232f3e;
+            color: white;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .header .logo {
+            display: flex;
+            align-items: center;
+        }
+        .header .logo img {
+            height: 30px;
+        }
+       
+        .header .search-bar {
+            flex-grow: 1;
+            display: flex;
+            margin: 0 20px;
+        }
+        .header .search-bar input {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 4px 0 0 4px;
+        }
+        .header .search-bar button {
+            padding: 10px;
+            background-color: #febd69;
+            border: none;
+            border-radius: 0 4px 4px 0;
+        }
+        .header .nav-links {
+            display: flex;
+            align-items: center;
+        }
+        .header .nav-links a {
+            color: white;
+            margin-left: 20px;
+            text-decoration: none;
+        }
+        .header .nav-links .cart {
+            display: flex;
+            align-items: center;
+        }
+        .header .nav-links .cart i {
+            margin-right: 5px;
+        }
+        .nav-bar {
+            background-color: #131a22;
+            color: white;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+        }
+        .nav-bar a {
+            color: white;
+            margin-right: 20px;
+            text-decoration: none;
+        }
+        .main-content {
+            padding: 20px;
+        }
+        .main-content .banner {
+            background-image: url('https://placehold.co/1200x400');
+            background-size: cover;
+            background-position: center;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            position: relative;
+        }
+        .main-content .banner .text {
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            border-radius: 10px;
+        }
+        .main-content .banner .text h1 {
+            margin: 0;
+            font-size: 36px;
+        }
+        .main-content .banner .text p {
+            margin: 10px 0 0;
+        }
+        .main-content .banner .text .discount {
+            margin-top: 20px;
+        }
+        .main-content .banner .text .discount img {
+            height: 30px;
+            margin-right: 10px;
+        }
+        .main-content .sections {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+        .main-content .sections .section {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            width: 24%;
+        }
+        .main-content .sections .section h2 {
+            font-size: 18px;
+            margin: 0 0 10px;
+        }
+        .main-content .sections .section .items {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .main-content .sections .section .items .item {
+            width: 48%;
+            margin: 1%;
+            text-align: center;
+        }
+        .main-content .sections .section .items .item img {
+            width: 100%;
+            border-radius: 10px;
+        }
+        .main-content .sections .section .items .item p {
+            margin: 5px 0 0;
+            font-size: 14px;
+        }
+        .main-content .sections .section .link {
+            margin-top: 10px;
+            text-align: right;
+        }
+        .main-content .sections .section .link a {
+            color: #007185;
+            text-decoration: none;
+        }
+  </style>
+ </head>
+ <body>
+  <div class="header">
+   <div class="logo">
+    <img alt="Amazon Logo" height="30" src="https://oaidalleapiprodscus.blob.core.windows.net/private/org-BVbpSZmLndA7MfHIxv2ahIKS/user-IBY8IaMXtVn7IVIdZeyvjx16/img-VnSbKrKJ5ggaEHNvY7D3YGwP.png?st=2024-09-04T11%3A32%3A16Z&amp;se=2024-09-04T13%3A32%3A16Z&amp;sp=r&amp;sv=2024-08-04&amp;sr=b&amp;rscd=inline&amp;rsct=image/png&amp;skoid=d505667d-d6c1-4a0a-bac7-5c84a87759f8&amp;sktid=a48cca56-e6da-484e-a814-9c849652bcb3&amp;skt=2024-09-03T23%3A29%3A27Z&amp;ske=2024-09-04T23%3A29%3A27Z&amp;sks=b&amp;skv=2024-08-04&amp;sig=%2B4quX5mzuvulZriHthF5XPNOcNOKSFfkXtyPAxMtMvE%3D" width="100"/>
+   <div class="location">
+     <i class="fas fa-map-marker-alt">
+     </i>
+     <!--Delivering to Shāhāda 425409 -->
+    </div>
+   </div> 
+   <div class="search-bar">
+    <input placeholder="Search Amazon.in" type="text"/>
+    <button>
+     <i class="fas fa-search">
+     </i>
+    </button>
+   </div>
+   <div class="nav-links">
+    <a href="#">
+<!----     EN -->
+    </a>
+    <a href="signin.html">
+     Hello, sign in
+     <br/>
+     Account &amp; Lists
+    </a>
+    <a href="#">
+      <!--Returns -->
+     <br/>
+     <!--&amp; Orders> -->
+    </a>
+    <a class="cart" href="#">
+     <i class="fas fa-shopping-cart">
+     </i>
+     Cart
+    </a>
+   </div>
+  </div>
+  <div class="nav-bar">
+   <a href="#">
+    <i class="fas fa-bars">
+    </i>
+    All
+   </a>
+   <a href="#">
+    <!--<Amazon miniTV> -->
+   </a>
+   <a href="#">
+    Sell
+   </a>
+   <a href="#">
+    Best Sellers
+   </a>
+   <a href="#">
+    Mobiles
+   </a>
+   <a href="#">
+   <!---- Today's Deals-->
+   </a>
+   <a href="#">
+    Customer Service
+   </a>
+   <a href="#">
+   <!---- Prime -->
+   </a>
+   <a href="#">
+    Electronics
+   </a>
+   <a href="#">
+    Fashion
+   </a>
+   <a href="#">
+    <!--New Releases-->
+   </a>
+   <a href="#">
+    Home &amp; Kitchen
+   </a>
+   <a href="#">
+    <!--Amazon Pay-->
+   </a>
+   <a href="#">
+    Computers
+   </a>
+   <a href="#">
+    Car &amp; Motorbike
+   </a>
+   <a href="#">
+    <Gift Ideas-->
+   </a>
+  </div>
+  <div class="main-content">
+   <div class="banner">
+    <div class="text">
+     <h1>
+      HOME SHOPPING SPREE
+     </h1>
+     <p>
+      4th – 8th September
+     </p>
+     <h2>
+      Minimum 40% off
+     </h2>
+     <p>
+      Kitchen essentials &amp; cookware
+     </p>
+     <div class="discount">
+      <img alt="HDFC Bank" height="30" src="https://oaidalleapiprodscus.blob.core.windows.net/private/org-BVbpSZmLndA7MfHIxv2ahIKS/user-IBY8IaMXtVn7IVIdZeyvjx16/img-OVCAu8fJTpg1MzSpJp4YeecF.png?st=2024-09-04T11%3A32%3A18Z&amp;se=2024-09-04T13%3A32%3A18Z&amp;sp=r&amp;sv=2024-08-04&amp;sr=b&amp;rscd=inline&amp;rsct=image/png&amp;skoid=d505667d-d6c1-4a0a-bac7-5c84a87759f8&amp;sktid=a48cca56-e6da-484e-a814-9c849652bcb3&amp;skt=2024-09-03T23%3A30%3A13Z&amp;ske=2024-09-04T23%3A30%3A13Z&amp;sks=b&amp;skv=2024-08-04&amp;sig=lvZ1YqHjDtbKYFwoN5p/uz03uLq7EWfFTzgQjQdWCJk%3D" width="100"/>
+      <img alt="SBI Card" height="30" src="https://oaidalleapiprodscus.blob.core.windows.net/private/org-BVbpSZmLndA7MfHIxv2ahIKS/user-IBY8IaMXtVn7IVIdZeyvjx16/img-4HS1QnTbsbY3VJ4jLEdfLTi5.png?st=2024-09-04T11%3A32%3A18Z&amp;se=2024-09-04T13%3A32%3A18Z&amp;sp=r&amp;sv=2024-08-04&amp;sr=b&amp;rscd=inline&amp;rsct=image/png&amp;skoid=d505667d-d6c1-4a0a-bac7-5c84a87759f8&amp;sktid=a48cca56-e6da-484e-a814-9c849652bcb3&amp;skt=2024-09-04T00%3A30%3A39Z&amp;ske=2024-09-05T00%3A30%3A39Z&amp;sks=b&amp;skv=2024-08-04&amp;sig=esJWyYTiQuIRamkW7G3bj114Ox1/ewD1MjnEe7DDbNc%3D" width="100"/>
+      <p>
+       Up to 10% Instant Discount*
+      </p>
+     </div>
+    </div>
+   </div>
+   <div class="sections">
+    <div class="section">
+     <h2>
+      Revamp your home in style
+     </h2>
+     <div class="items">
+      <div class="item">
+       <img alt="Cushion covers, bedsheets &amp; more" height="100" src="https://oaidalleapiprodscus.blob.core.windows.net/private/org-BVbpSZmLndA7MfHIxv2ahIKS/user-IBY8IaMXtVn7IVIdZeyvjx16/img-BfoS4yYcu1ufXmMGhXCkRIW6.png?st=2024-09-04T11%3A32%3A17Z&amp;se=2024-09-04T13%3A32%3A17Z&amp;sp=r&amp;sv=2024-08-04&amp;sr=b&amp;rscd=inline&amp;rsct=image/png&amp;skoid=d505667d-d6c1-4a0a-bac7-5c84a87759f8&amp;sktid=a48cca56-e6da-484e-a814-9c849652bcb3&amp;skt=2024-09-04T00%3A26%3A28Z&amp;ske=2024-09-05T00%3A26%3A28Z&amp;sks=b&amp;skv=2024-08-04&amp;sig=cBWTBMKjQuOh3LF3/CF4oWJMAypwQmeM0zg5z/gpRqY%3D" width="100"/>
+       <p>
+        Cushion covers, bedsheets &amp; more
+       </p>
+      </div>
+      <div class="item">
+       <img alt="Figurines, vases &amp; more" height="100" src="https://oaidalleapiprodscus.blob.core.windows.net/private/org-BVbpSZmLndA7MfHIxv2ahIKS/user-IBY8IaMXtVn7IVIdZeyvjx16/img-dLWVnRAlTpGyAGmghWpeBXgk.png?st=2024-09-04T11%3A32%3A17Z&amp;se=2024-09-04T13%3A32%3A17Z&amp;sp=r&amp;sv=2024-08-04&amp;sr=b&amp;rscd=inline&amp;rsct=image/png&amp;skoid=d505667d-d6c1-4a0a-bac7-5c84a87759f8&amp;sktid=a48cca56-e6da-484e-a814-9c849652bcb3&amp;skt=2024-09-03T23%3A57%3A33Z&amp;ske=2024-09-04T23%3A57%3A33Z&amp;sks=b&amp;skv=2024-08-04&amp;sig=FRNEqGV7fYL6e4wvV9ycTMabDTRA1v6AV49UMBG6acg%3D" width="100"/>
+       <p>
+        Figurines, vases &amp; more
+       </p>
+      </div>
+      <div class="item">
+       <img alt="Home storage" height="100" src="https://oaidalleapiprodscus.blob.core.windows.net/private/org-BVbpSZmLndA7MfHIxv2ahIKS/user-IBY8IaMXtVn7IVIdZeyvjx16/img-rJYqVMXwkQpIRpBqM1QRYUk5.png?st=2024-09-04T11%3A32%3A20Z&amp;se=2024-09-04T13%3A32%3A20Z&amp;sp=r&amp;sv=2024-08-04&amp;sr=b&amp;rscd=inline&amp;rsct=image/png&amp;skoid=d505667d-d6c1-4a0a-bac7-5c84a87759f8&amp;sktid=a48cca56-e6da-484e-a814-9c849652bcb3&amp;skt=2024-09-04T01%3A03%3A26Z&amp;ske=2024-09-05T01%3A03%3A26Z&amp;sks=b&amp;skv=2024-08-04&amp;sig=IpNRVbNfvaJlrpT4O%2BQXjvc/xYU5bJt445B/pS4yW8w%3D" width="100"/>
+       <p>
+        Home storage
+       </p>
+      </div>
+      <div class="item">
+       <img alt="Lighting solutions" height="100" src="https://oaidalleapiprodscus.blob.core.windows.net/private/org-BVbpSZmLndA7MfHIxv2ahIKS/user-IBY8IaMXtVn7IVIdZeyvjx16/img-yOV8i7ClhEAEHuRyrgg0c25d.png?st=2024-09-04T11%3A32%3A18Z&amp;se=2024-09-04T13%3A32%3A18Z&amp;sp=r&amp;sv=2024-08-04&amp;sr=b&amp;rscd=inline&amp;rsct=image/png&amp;skoid=d505667d-d6c1-4a0a-bac7-5c84a87759f8&amp;sktid=a48cca56-e6da-484e-a814-9c849652bcb3&amp;skt=2024-09-04T00%3A16%3A52Z&amp;ske=2024-09-05T00%3A16%3A52Z&amp;sks=b&amp;skv=2024-08-04&amp;sig=9dw%2BEIeq6gtTevC1w0ActBYbn%2BZF1Wo3vt9LhxeIBAk%3D" width="100"/>
+       <p>
+        Lighting solutions
+       </p>
+      </div>
+     </div>
+     <div class="link">
+      <a href="#">
+       Explore all
+      </a>
+     </div>
+    </div>
+    <div class="section">
+     <h2>
+      Appliances for your home | Up to 55% off
+     </h2>
+     <div class="items">
+      <div class="item">
+       <img alt="Air conditioners" height="100" src="https://oaidalleapiprodscus.blob.core.windows.net/private/org-BVbpSZmLndA7MfHIxv2ahIKS/user-IBY8IaMXtVn7IVIdZeyvjx16/img-KZvqu1tZizrlFzHKJwTNbHeT.png?st=2024-09-04T11%3A32%3A19Z&amp;se=2024-09-04T13%3A32%3A19Z&amp;sp=r&amp;sv=2024-08-04&amp;sr=b&amp;rscd=inline&amp;rsct=image/png&amp;skoid=d505667d-d6c1-4a0a-bac7-5c84a87759f8&amp;sktid=a48cca56-e6da-484e-a814-9c849652bcb3&amp;skt=2024-09-04T06%3A24%3A32Z&amp;ske=2024-09-05T06%3A24%3A32Z&amp;sks=b&amp;skv=2024-08-04&amp;sig=f7/D6azehux424UJpy58PivmE1lAw4PBeVO8stBvjhI%3D" width="100"/>
+       <p>
+        Air conditioners
+       </p>
+      </div>
+      <div class="item">
+       <img alt="Refrigerators" height="100" src="https://oaidalleapiprodscus.blob.core.windows.net/private/org-BVbpSZmLndA7MfHIxv2ahIKS/user-IBY8IaMXtVn7IVIdZeyvjx16/img-0Zbn93iwBGz0kwdsplDSOHrZ.png?st=2024-09-04T11%3A32%3A16Z&amp;se=2024-09-04T13%3A32%3A16Z&amp;sp=r&amp;sv=2024-08-04&amp;sr=b&amp;rscd=inline&amp;rsct=image/png&amp;skoid=d505667d-d6c1-4a0a-bac7-5c84a87759f8&amp;sktid=a48cca56-e6da-484e-a814-9c849652bcb3&amp;skt=2024-09-04T01%3A33%3A22Z&amp;ske=2024-09-05T01%3A33%3A22Z&amp;sks=b&amp;skv=2024-08-04&amp;sig=XoCuecM8KPqEXkYsVc4xQ9LRW2jHYPn23%2Bg6Uj5BALs%3D" width="100"/>
+       <p>
+        Refrigerators
+       </p>
+      </div>
+      <div class="item">
+       <img alt="Microwaves" height="100" src="https://oaidalleapiprodscus.blob.core.windows.net/private/org-BVbpSZmLndA7MfHIxv2ahIKS/user-IBY8IaMXtVn7IVIdZeyvjx16/img-NKkYmXNePBusCRl0cpOl0Gca.png?st=2024-09-04T11%3A32%3A18Z&amp;se=2024-09-04T13%3A32%3A18Z&amp;sp=r&amp;sv=2024-08-04&amp;sr=b&amp;rscd=inline&amp;rsct=image/png&amp;skoid=d505667d-d6c1-4a0a-bac7-5c84a87759f8&amp;sktid=a48cca56-e6da-484e-a814-9c849652bcb3&amp;skt=2024-09-04T05%3A59%3A20Z&amp;ske=2024-09-05T05%3A59%3A20Z&amp;sks=b&amp;skv=2024-08-04&amp;sig=%2BHrlMoo%2BypU0MWIZRAYABX7YCJAQIxCLT56ytMxEEqw%3D" width="100"/>
+       <p>
+        Microwaves
+       </p>
+      </div>
+      <div class="item">
+       <img alt="Washing machines" height="100" src="https://oaidalleapiprodscus.blob.core.windows.net/private/org-BVbpSZmLndA7MfHIxv2ahIKS/user-IBY8IaMXtVn7IVIdZeyvjx16/img-zwMoiFlhKeojAG0Hlb6jbj7D.png?st=2024-09-04T11%3A32%3A16Z&amp;se=2024-09-04T13%3A32%3A16Z&amp;sp=r&amp;sv=2024-08-04&amp;sr=b&amp;rscd=inline&amp;rsct=image/png&amp;skoid=d505667d-d6c1-4a0a-bac7-5c84a87759f8&amp;sktid=a48cca56-e6da-484e-a814-9c849652bcb3&amp;skt=2024-09-04T00%3A52%3A10Z&amp;ske=2024-09-05T00%3A52%3A10Z&amp;sks=b&amp;skv=2024-08-04&amp;sig=QigLB8F0Rgf9atyUDufii6QMXUBmZafEnZO2kleUUhc%3D" width="100"/>
+       <p>
+        Washing machines
+       </p>
+      </div>
+     </div>
+     <div class="link">
+      <a href="#">
+       See more
+      </a>
+     </div>
+    </div>
+    <div class="section">
+     <h2>
+      Starting ₹149 | Headphones
+     </h2>
+     <div class="items">
+      <div class="item">
+       <img alt="boAt" height="100" src="https://oaidalleapiprodscus.blob.core.windows.net/private/org-BVbpSZmLndA7MfHIxv2ahIKS/user-IBY8IaMXtVn7IVIdZeyvjx16/img-qzca672U9ii5iBcw9nb7igR7.png?st=2024-09-04T11%3A32%3A17Z&amp;se=2024-09-04T13%3A32%3A17Z&amp;sp=r&amp;sv=2024-08-04&amp;sr=b&amp;rscd=inline&amp;rsct=image/png&amp;skoid=d505667d-d6c1-4a0a-bac7-5c84a87759f8&amp;sktid=a48cca56-e6da-484e-a814-9c849652bcb3&amp;skt=2024-09-03T23%3A50%3A09Z&amp;ske=2024-09-04T23%3A50%3A09Z&amp;sks=b&amp;skv=2024-08-04&amp;sig=9Kt5%2BAYA1WGjeU6TIgzobQzkts9J3m8hkqjDaez%2BTo4%3D" width="100"/>
+       <p>
+        Starting ₹249 | boAt
+       </p>
+      </div>
+      <div class="item">
+       <img alt="boult" height="100" src="https://oaidalleapiprodscus.blob.core.windows.net/private/org-BVbpSZmLndA7MfHIxv2ahIKS/user-IBY8IaMXtVn7IVIdZeyvjx16/img-CbYcpXKQe19tsYv2gRXipjiw.png?st=2024-09-04T11%3A32%3A15Z&amp;se=2024-09-04T13%3A32%3A15Z&amp;sp=r&amp;sv=2024-08-04&amp;sr=b&amp;rscd=inline&amp;rsct=image/png&amp;skoid=d505667d-d6c1-4a0a-bac7-5c84a87759f8&amp;sktid=a48cca56-e6da-484e-a814-9c849652bcb3&amp;skt=2024-09-04T04%3A44%3A08Z&amp;ske=2024-09-05T04%3A44%3A08Z&amp;sks=b&amp;skv=2024-08-04&amp;sig=VhYAr0wrFx5/HxPbWsK4Cx8kgruh%2BIdkvUpey5forPk%3D" width="100"/>
+       <p>
+        Starting ₹349 | boult
+       </p>
+      </div>
+      <div class="item">
+       <img alt="Noise" height="100" src="https://oaidalleapiprodscus.blob.core.windows.net/private/org-BVbpSZmLndA7MfHIxv2ahIKS/user-IBY8IaMXtVn7IVIdZeyvjx16/img-1QB87HndGWc27XZXEjNB1nyi.png?st=2024-09-04T11%3A32%3A13Z&amp;se=2024-09-04T13%3A32%3A13Z&amp;sp=r&amp;sv=2024-08-04&amp;sr=b&amp;rscd=inline&amp;rsct=image/png&amp;skoid=d505667d-d6c1-4a0a-bac7-5c84a87759f8&amp;sktid=a48cca56-e6da-484e-a814-9c849652bcb3&amp;skt=2024-09-03T23%3A55%3A10Z&amp;ske=2024-09-04T23%3A55%3A10Z&amp;sks=b&amp;skv=2024-08-04&amp;sig=lkkNNuUDPDC3xmF/JJH%2BYKbKtCBFYOc1vkRfUOizewo%3D" width="100"/>
+       <p>
+        Starting ₹649 | Noise
+       </p>
+      </div>
+      <div class="item">
+       <img alt="Zebronics" height="100" src="https://oaidalleapiprodscus.blob.core.windows.net/private/org-BVbpSZmLndA7MfHIxv2ahIKS/user-IBY8IaMXtVn7IVIdZeyvjx16/img-CLyLFZZvGZDepeUnAV7Ykq3C.png?st=2024-09-04T11%3A32%3A14Z&amp;se=2024-09-04T13%3A32%3A14Z&amp;sp=r&amp;sv=2024-08-04&amp;sr=b&amp;rscd=inline&amp;rsct=image/png&amp;skoid=d505667d-d6c1-4a0a-bac7-5c84a87759f8&amp;sktid=a48cca56-e6da-484e-a814-9c849652bcb3&amp;skt=2024-09-04T00%3A12%3A33Z&amp;ske=2024-09-05T00%3A12%3A33Z&amp;sks=b&amp;skv=2024-08-04&amp;sig=MdjDlE9BqFgVKWCctWXUqNHMX6TQHPKA4dXl65GcCok%3D" width="100"/>
+       <p>
+        Starting ₹149 | Zebronics
+       </p>
+      </div>
+     </div>
+     <div class="link">
+      <a href="#">
+       See all offers
+      </a>
+     </div>
+    </div>
+    <div class="section">
+     <h2>
+      Starting ₹99 | Amazon Brands &amp; more
+     </h2>
+     <div class="items">
+      <div class="item">
+       <img alt="Home storage &amp; organization" height="100" src="https://oaidalleapiprodscus.blob.core.windows.net/private/org-BVbpSZmLndA7MfHIxv2ahIKS/user-IBY8IaMXtVn7IVIdZeyvjx16/img-s7v7TLCY4dH36clyb8tDAd6m.png?st=2024-09-04T11%3A32%3A18Z&amp;se=2024-09-04T13%3A32%3A18Z&amp;sp=r&amp;sv=2024-08-04&amp;sr=b&amp;rscd=inline&amp;rsct=image/png&amp;skoid=d505667d-d6c1-4a0a-bac7-5c84a87759f8&amp;sktid=a48cca56-e6da-484e-a814-9c849652bcb3&amp;skt=2024-09-04T00%3A29%3A04Z&amp;ske=2024-09-05T00%3A29%3A04Z&amp;sks=b&amp;skv=2024-08-04&amp;sig=GQGB36uEwVYgVyVbQSjNIUYvEtaHGo3H%2B3dWydwEZjc%3D" width="100"/>
+       <p>
+        Starting ₹299 | Home storage &amp; organization
+       </p>
+      </div>
+      <div class="item">
+       <img alt="Storage &amp; racks" height="100" src="https://oaidalleapiprodscus.blob.core.windows.net/private/org-BVbpSZmLndA7MfHIxv2ahIKS/user-IBY8IaMXtVn7IVIdZeyvjx16/img-bQzkKEzhiHY4bGt1bBhy3NbI.png?st=2024-09-04T11%3A32%3A18Z&amp;se=2024-09-04T13%3A32%3A18Z&amp;sp=r&amp;sv=2024-08-04&amp;sr=b&amp;rscd=inline&amp;rsct=image/png&amp;skoid=d505667d-d6c1-4a0a-bac7-5c84a87759f8&amp;sktid=a48cca56-e6da-484e-a814-9c849652bcb3&amp;skt=2024-09-04T00%3A29%3A29Z&amp;ske=2024-09-05T00%3A29%3A29Z&amp;sks=b&amp;skv=2024-08-04&amp;sig=UgxciPm8b1iHBEO41nM85GGKJNvGRHEYrWfudEgfCJE%3D" width="100"/>
+       <p>
+        Up to 60% off | Storage &amp; racks
+       </p>
+      </div>
+      <div class="item">
+       <img alt="Toys &amp; games" height="100" src="https://oaidalleapiprodscus.blob.core.windows.net/private/org-BVbpSZmLndA7MfHIxv2ahIKS/user-IBY8IaMXtVn7IVIdZeyvjx16/img-ogARuc8MWdksyMmQWXl9lYmc.png?st=2024-09-04T11%3A32%3A17Z&amp;se=2024-09-04T13%3A32%3A17Z&amp;sp=r&amp;sv=2024-08-04&amp;sr=b&amp;rscd=inline&amp;rsct=image/png&amp;skoid=d505667d-d6c1-4a0a-bac7-5c84a87759f8&amp;sktid=a48cca56-e6da-484e-a814-9c849652bcb3&amp;skt=2024-09-04T00%3A06%3A30Z&amp;ske=2024-09-05T00%3A06%3A30Z&amp;sks=b&amp;skv=2024-08-04&amp;sig=AXZVNunPUaXHZrWPV0Es/e1SWCOUeFkf2KFctp3%2BUTM%3D" width="100"/>
+       <p>
+        Starting ₹99 | Toys &amp; games
+       </p>
+      </div>
+      <div class="item">
+       <img alt="Jackets, dresses &amp; more" height="100" src="https://oaidalleapiprodscus.blob.core.windows.net/private/org-BVbpSZmLndA7MfHIxv2ahIKS/user-IBY8IaMXtVn7IVIdZeyvjx16/img-l2llSGWc1jZ5mh924WivIYqK.png?st=2024-09-04T11%3A32%3A17Z&amp;se=2024-09-04T13%3A32%3A17Z&amp;sp=r&amp;sv=2024-08-04&amp;sr=b&amp;rscd=inline&amp;rsct=image/png&amp;skoid=d505667d-d6c1-4a0a-bac7-5c84a87759f8&amp;sktid=a48cca56-e6da-484e-a814-9c849652bcb3&amp;skt=2024-09-03T23%3A44%3A53Z&amp;ske=2024-09-04T23%3A44%3A53Z&amp;sks=b&amp;skv=2024-08-04&amp;sig=/kme5/LXbfhRd3dTL6Lcn1oJb1Q87btL0xlZUPwW%2Btc%3D" width="100"/>
+       <p>
+        Up to 60% off | Jackets, dresses &amp; more
+       </p>
+      </div>
+     </div>
+     <div class="link">
+      <a href="#">
+       Shop now
+      </a>
+     </div>
+    </div>
+   </div>
+  </div>
+ </body>
+</html>
