@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amazon Clone</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .header {
+            background-color: #131921;
+            color: #fff;
+            padding: 1rem;
+            text-align: center;
+        }
+        .product-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .product {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            margin: 1rem;
+            padding: 1rem;
+            width: 20rem;
+        }
+        .product img {
+            width: 100%;
+        }
+        .cart {
+            position: fixed;
+            top: 0;
+            right: 0;
+            background-color: #131921;
+            color: #fff;
+            padding: 1rem;
+        }
+        .cart button {
+            background-color: #f0c14b;
+            border: none;
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+        }
+        .checkout {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #fff;
+            padding: 2rem;
+            border: 1px solid #ddd;
+        }
+        .checkout button {
+            background-color: #f0c14b;
+            border: none;
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Amazon Clone</h1>
+    </div>
+    <div class="cart">
+        <h2>Cart</h2>
+        <p id="cart-items">0 items</p>
+        <button id="checkout-btn">Checkout</button>
+    </div>
+    <div class="product-container">
+        <div class="product">
+            <img src="https://picsum.photos/200/300" alt="Product 1">
+            <h2>Product 1</h2>
+            <p>$10.99</p>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+        <div class="product">
+            <img src="https://picsum.photos/200/301" alt="Product 2">
+            <h2>Product 2</h2>
+            <p>$9.99</p>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+        <div class="product">
+            <img src="https://picsum.photos/200/302" alt="Product 3">
+            <h2>Product 3</h2>
+            <p>$12.99</p>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+    </div>
+    <div class="checkout" id="checkout-modal">
+        <h2>Checkout</h2>
+        <p id="checkout-items">0 items</p>
+        <p id="checkout-total">$0.00</p>
+        <button id="place-order-btn">Place Order</button>
+    </div>
+
+    <script>
+        let cartItems = 0;
+        let checkoutItems = 0;
+        let checkoutTotal = 0;
+
+        document.querySelectorAll('.add-to-cart').forEach(button => {
+            button.addEventListener('click', () => {
+                cartItems++;
+                document.getElementById('cart-items').innerText = `${cartItems} items`;
+            });
+        });
+
+        document.getElementById('checkout-btn').addEventListener('click', () => {
+            document.getElementById('checkout-modal').style.display = 'block';
+            checkoutItems = cartItems;
+            document.getElementById('checkout-items').innerText = `${checkoutItems} items`;
+            checkoutTotal = checkoutItems * 10.99;
+            document.getElementById('checkout-total').innerText = `$${checkoutTotal.toFixed(2)}`;
+        });
+
+        document.getElementById('place-order-btn').addEventListener('click', () => {
+            alert('Order placed successfully!');
+            cartItems = 0;
+            checkoutItems = 0;
+            checkoutTotal = 0;
+            document.getElementById('cart-items').innerText = `${cartItems} items`;
+            document.getElementById('checkout-modal').style.display = 'none';
+        });
+    </script>
+</body>
+</html>
