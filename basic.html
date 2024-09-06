@@ -1,0 +1,262 @@
+<html>
+ <head>
+  <title>
+   Heveya
+  </title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+  <style>
+   body {
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+        }
+        .top-bar {
+            background-color: #4a5a4f;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            font-size: 14px;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 40px;
+            background-color: white;
+            border-bottom: 1px solid #e0e0e0;
+            position: relative;
+            z-index: 10;
+        }
+        .navbar .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: #4a5a4f;
+        }
+        .navbar .menu {
+            display: flex;
+            gap: 20px;
+            position: relative;
+        }
+        .navbar .menu a {
+            text-decoration: none;
+            color: #4a5a4f;
+            font-weight: 500;
+            font-size: 16px;
+            position: relative;
+        }
+        .navbar .menu a:hover {
+            color: #000;
+        }
+        .navbar .menu .dropdown {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: white;
+            border: 1px solid #e0e0e0;
+            display: none;
+            flex-direction: column;
+            width: 100%;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            z-index: 20;
+        }
+        .navbar .menu .dropdown a {
+            padding: 10px 20px;
+            white-space: nowrap;
+        }
+        .navbar .menu .dropdown a:hover {
+            background-color: #f0f0f0;
+        }
+        .navbar .menu .menu-item:hover .dropdown {
+            display: flex;
+        }
+        .navbar .right-menu {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        .navbar .right-menu a {
+            text-decoration: none;
+            color: #4a5a4f;
+            font-size: 16px;
+        }
+        .navbar .right-menu .cart {
+            position: relative;
+        }
+        .navbar .right-menu .cart .fa-shopping-cart {
+            font-size: 20px;
+        }
+        .navbar .right-menu .cart .cart-count {
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            background-color: #4a5a4f;
+            color: white;
+            border-radius: 50%;
+            padding: 2px 6px;
+            font-size: 12px;
+        }
+        .hero {
+            position: relative;
+            text-align: center;
+        }
+        .hero img {
+            width: 100%;
+            height: auto;
+        }
+        .whatsapp-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            display: flex;
+            align-items: center;
+            background-color: white;
+            border: 1px solid #e0e0e0;
+            border-radius: 50px;
+            padding: 10px 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            font-size: 16px;
+            color: #4a5a4f;
+            text-decoration: none;
+        }
+        .whatsapp-button .fa-whatsapp {
+            margin-right: 10px;
+            font-size: 20px;
+            color: #25d366;
+        }
+  </style>
+ </head>
+ <body>
+  <div class="top-bar">
+   Learn more about Heveya® Mattresses • Save more when you bundle up! • Subscribe &amp; get RP 300.000 off first purchase
+  </div>
+  <div class="navbar">
+   <div class="logo">
+    Heveya®
+   </div>
+   <div class="menu">
+    <div class="menu-item">
+     <a href="#">
+      MATTRESSES
+     </a>
+     <div class="dropdown">
+      <a href="#">
+       Heveya® III
+      </a>
+      <a href="#">
+       Heveya® II
+      </a>
+      <a href="#">
+       Heveya® I
+      </a>
+     </div>
+    </div>
+    <div class="menu-item">
+     <a href="#">
+      BED FRAMES
+     </a>
+     <div class="dropdown">
+      <a href="#">
+       Wooden Bed Frames
+      </a>
+      <a href="#">
+       Upholstered Bed Frames
+      </a>
+      <a href="#">
+       Adjustable Bed Frames
+      </a>
+     </div>
+    </div>
+    <div class="menu-item">
+     <a href="#">
+      PILLOWS &amp; BOLSTER
+     </a>
+     <div class="dropdown">
+      <a href="#">
+       Latex Pillows
+      </a>
+      <a href="#">
+       Memory Foam Pillows
+      </a>
+      <a href="#">
+       Bolsters
+      </a>
+     </div>
+    </div>
+    <div class="menu-item">
+     <a href="#">
+      SHEETS
+     </a>
+     <div class="dropdown">
+      <a href="#">
+       Cotton Sheets
+      </a>
+      <a href="#">
+       Linen Sheets
+      </a>
+      <a href="#">
+       Bamboo Sheets
+      </a>
+     </div>
+    </div>
+    <div class="menu-item">
+     <a href="#">
+      ACCESSORIES
+     </a>
+     <div class="dropdown">
+      <a href="#">
+       Mattress Protectors
+      </a>
+      <a href="#">
+       Bedside Tables
+      </a>
+      <a href="#">
+       Lamps
+      </a>
+     </div>
+    </div>
+    <div class="menu-item">
+     <a href="#">
+      BUNDLES
+     </a>
+     <div class="dropdown">
+      <a href="#">
+       Bundle 1
+      </a>
+      <a href="#">
+       Bundle 2
+      </a>
+      <a href="#">
+       Bundle 3
+      </a>
+     </div>
+    </div>
+   </div>
+   <div class="right-menu">
+    <a href="#">
+     Support
+    </a>
+    <a href="#">
+     Account
+    </a>
+    <a href="#">
+     Account
+    </a>
+    <a class="cart" href="#">
+     <i class="fas fa-shopping-cart">
+     </i>
+     <span class="cart-count">
+      0
+     </span>
+    </a>
+   </div>
+  </div>
+  <div class="hero">
+   <img alt="A luxurious bedroom setup with a Heveya mattress, pillows, and a lush green outdoor view" height="700" src="https://oaidalleapiprodscus.blob.core.windows.net/private/org-Hh5RPsKhtBPsWCFSiEKnUJ6x/user-8qgiVpCV0U0b7zDjfFInHgjl/img-TAnahS1LLXyGaAgXKmpIBcuW.png?st=2024-09-06T12%3A40%3A16Z&amp;se=2024-09-06T14%3A40%3A16Z&amp;sp=r&amp;sv=2024-08-04&amp;sr=b&amp;rscd=inline&amp;rsct=image/png&amp;skoid=d505667d-d6c1-4a0a-bac7-5c84a87759f8&amp;sktid=a48cca56-e6da-484e-a814-9c849652bcb3&amp;skt=2024-09-05T21%3A23%3A12Z&amp;ske=2024-09-06T21%3A23%3A12Z&amp;sks=b&amp;skv=2024-08-04&amp;sig=LGq7xDgxuxgnE0zlmJUTa9L0gTNnVum6MRyG%2B0kS/Ao%3D" width="1500"/>
+  </div>
+  <a class="whatsapp-button" href="#">
+   <i class="fab fa-whatsapp">
+   </i>
+   Message us
+  </a>
+ </body>
+</html>

@@ -1,0 +1,256 @@
+<html>
+<head>
+    <title>Heveya</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        .top-bar {
+            background-color: #5a7d6a;
+            color: white;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            text-align: center;
+            font-size: 14px;
+            transition: top 0.5s ease-in-out, background-color 0.5s; /* Added transition for smooth top movement */
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 10;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #7a9b87;
+            padding: 20px;
+            position: fixed;
+            width: 100%;
+            top: 50px; /* Adjust based on top-bar height */
+            z-index: 9;
+            transition: top 0.5s ease-in-out, padding 0.3s, background-color 0.5s; /* Smooth transformation */
+        }
+        .navbar.shrink {
+            padding: 10px; /* Reduce padding on scroll */
+            background-color: #587664; /* Change background color on scroll */
+        }
+        .navbar .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: white;
+        }
+        .navbar .menu {
+            display: flex;
+            gap: 20px;
+        }
+        .navbar .menu > div {
+            position: relative;
+        }
+        .navbar .menu a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+        }
+        .navbar .menu .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: white;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+            z-index: 1;
+            right: 0;
+            opacity: 0; /* Initially hidden */
+            transform: translateY(-10px); /* Slightly moved up */
+            transition: opacity 0.3s ease, transform 0.3s ease; /* Smooth dropdown transition */
+        }
+        .navbar .menu .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+        .navbar .menu .dropdown-content a:hover {
+            background-color: #f1f1f1;
+        }
+        .navbar .menu .dropdown:hover .dropdown-content {
+            display: block;
+            opacity: 1; /* Visible when hovered */
+            transform: translateY(0); /* Move into position */
+        }
+        .navbar .icons {
+            display: flex;
+            gap: 20px;
+        }
+        .navbar .icons a {
+            color: white;
+            font-size: 20px;
+            text-decoration: none;
+        }
+        .background-image {
+            background-image: url('https://placehold.co/1800x800');
+            background-size: cover;
+            background-position: center;
+            height: 500px;
+            filter: brightness(0.7);
+        }
+        .dropdown {
+            display: inline-block;
+            position: relative;
+        }
+        .dropdown-text {
+            font-size: 16px;
+            letter-spacing: 2px;
+            color: white;
+            position: relative;
+            cursor: pointer;
+        }
+        .dropdown-text::after {
+            content: '';
+            position: absolute;
+            width: calc(100% + 20px); /* Adjust width to cover the text and the icon */
+            height: 2px;
+            bottom: -10px; /* Adjust this value to increase the distance between the word and the underline */
+            left: 0;
+            background-color: white;
+            visibility: hidden;
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: all 0.3s ease-in-out;
+        }
+        .dropdown:hover .dropdown-text::after {
+            visibility: visible;
+            transform: scaleX(1);
+        }
+        .dropdown-icon {
+            margin-left: 5px;
+            font-size: 12px;
+            vertical-align: middle;
+            transition: transform 0.3s ease-in-out;
+            position: relative;
+            top: -5px; /* Adjust this value to move the icon upwards */
+        }
+        .dropdown:hover .dropdown-icon {
+            transform: rotate(180deg);
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .navbar .menu {
+                display: none; /* Hide menu in smaller screens */
+            }
+            .navbar .menu.mobile {
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                width: 100%;
+                background-color: #7a9b87;
+                padding: 10px;
+            }
+            .navbar .icons {
+                display: flex;
+                gap: 10px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="top-bar">
+        <div class="left-section">
+            <span>Learn more about Heveya® Mattresses</span>
+            <span>•</span>
+            <span>Save more when you bundle up!</span>
+            <span>•</span>
+            <span>Subscribe & get RP 300.000 off first purchase</span>
+        </div>
+        <div class="right-section">
+            <span>Showroom</span>
+            <span>Support</span>
+            <span>Why Heveya</span>
+            <span>Account</span>
+        </div>
+    </div>
+    <div class="navbar" id="navbar">
+        <div class="logo">Heveya®</div>
+        <div class="menu">
+            <div class="dropdown">
+                <span class="dropdown-text">MATTRESSES</span>
+                <i class="fas fa-chevron-down dropdown-icon"></i>
+                <div class="dropdown-content">
+                    <a href="#">Option 1</a>
+                    <a href="#">Option 2</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <span class="dropdown-text">BED FRAMES</span>
+                <i class="fas fa-chevron-down dropdown-icon"></i>
+                <div class="dropdown-content">
+                    <a href="#">Option 1</a>
+                    <a href="#">Option 2</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <span class="dropdown-text">PILLOWS & BOLSTER</span>
+                <i class="fas fa-chevron-down dropdown-icon"></i>
+                <div class="dropdown-content">
+                    <a href="#">Option 1</a>
+                    <a href="#">Option 2</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <span class="dropdown-text">SHEETS</span>
+                <i class="fas fa-chevron-down dropdown-icon"></i>
+                <div class="dropdown-content">
+                    <a href="#">Option 1</a>
+                    <a href="#">Option 2</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <span class="dropdown-text">ACCESSORIES</span>
+                <i class="fas fa-chevron-down dropdown-icon"></i>
+                <div class="dropdown-content">
+                    <a href="#">Option 1</a>
+                    <a href="#">Option 2</a>
+                </div>
+            </div>
+            <a href="#" class="dropdown-text">BUNDLES</a>
+            <div class="dropdown">
+                <span class="dropdown-text">SUPPORT</span>
+                <i class="fas fa-chevron-down dropdown-icon"></i>
+                <div class="dropdown-content">
+                    <a href="#">Contact <i class="fas fa-arrow-right"></i></a>
+                    <a href="#">Size Guide <i class="fas fa-arrow-right"></i></a>
+                    <a href="#">Made to Order <i class="fas fa-arrow-right"></i></a>
+                    <a href="#">FAQ <i class="fas fa-arrow-right"></i></a>
+                    <a href="#">Warranty <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+            <a href="#" class="dropdown-text">Showroom</a>
+            <a href="#" class="dropdown-text">Why Heveya</a>
+            <a href="#" class="dropdown-text">Account</a>
+        </div>
+        <div class="icons">
+            <a href="#"><i class="fas fa-search"></i></a>
+            <a href="#"><i class="fas fa-shopping-cart"></i></a>
+        </div>
+    </div>
+    <div class="background-image"></div>
+
+    <script>
+        window.onscroll = function() {
+            var navbar = document.getElementById("navbar");
+            if (window.pageYOffset > 50) {
+                navbar.classList.add("shrink");
+            } else {
+                navbar.classList.remove("shrink");
+            }
+        };
+    </script>
+</body>
+</html>
