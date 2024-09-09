@@ -1,0 +1,98 @@
+<html>
+<head>
+    <title>Heveya® Natural Organic Latex Mattress III</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+        }
+        .container {
+            position: relative;
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .image {
+            width: 100%;
+            height: auto;
+        }
+        .dot {
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            background-color: #a8c0a8;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: background-color 0.3s, border-color 0.3s;
+        }
+        .dot::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 45px;
+            height: 45px;
+            border: 3px solid #a8c0a8;
+            border-radius: 50%;
+            transition: border-color 0.3s;
+        }
+        .dot:hover {
+            background-color: #5a6e5a;
+            border-color: #5a6e5a;
+        }
+        .dot:hover::before {
+            border-color: #5a6e5a;
+        }
+        .name-tag {
+            display: none;
+            position: absolute;
+            top: -60px; /* Adjust this value to position the name tag above the outer circle */
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #5a6e5a;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            white-space: nowrap;
+        }
+        .dot:hover .name-tag {
+            display: block;
+        }
+        .dot1 {
+            top: 45%;
+            left: 40%;
+        }
+        .dot2 {
+            top: 60%;
+            left: 50%;
+        }
+        .ha-heveya-throw-cotton-ombre {
+            left: 75%;
+            top: 50%;
+        }
+        @media screen and (min-width: 1024px) {
+            .ha-heveya-throw-cotton-ombre {
+                left: 75%;
+                top: 50%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img alt="A cozy bedroom with a wooden bed frame, white pillows, and grey bedding. There are two windows, a lamp, and a plant in the room." class="image" height="800" src="https://oaidalleapiprodscus.blob.core.windows.net/private/org-BVbpSZmLndA7MfHIxv2ahIKS/user-IBY8IaMXtVn7IVIdZeyvjx16/img-cKyQTeiwLopCpMIBv0bzj8BD.png?st=2024-09-07T05%3A59%3A29Z&se=2024-09-07T07%3A59%3A29Z&sp=r&sv=2024-08-04&sr=b&rscd=inline&rsct=image/png&skoid=d505667d-d6c1-4a0a-bac7-5c84a87759f8&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2024-09-06T21%3A44%3A50Z&ske=2024-09-07T21%3A44%3A50Z&sks=b&skv=2024-08-04&sig=NnJIrgpkbpqUjRWqDzoB1Fjia8FqKXxGd2NDtW3dPW0%3D" width="1200"/>
+        <div class="dot dot1">
+            <div class="name-tag">Pillow</div>
+        </div>
+        <div class="dot dot2">
+            <div class="name-tag">Mattress</div>
+        </div>
+        <div class="dot ha-heveya-throw-cotton-ombre">
+            <div class="name-tag">Throw</div>
+        </div>
+    </div>
+</body>
+</html>

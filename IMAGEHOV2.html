@@ -1,0 +1,217 @@
+To apply the specific styles you provided to the color option elements and ensure the main image changes on hover, you can integrate the styles directly into the HTML and CSS. Below is the updated code with the necessary changes:
+
+```html
+<html>
+ <head>
+  <title>
+   Product Page
+  </title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <style>
+   body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f5f0;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            display: flex;
+            justify-content: space-around;
+            padding: 20px;
+        }
+        .product-card {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            width: 22%;
+            padding: 20px;
+            text-align: center;
+            position: relative;
+        }
+        .product-card img {
+            width: 100%;
+            border-radius: 10px;
+        }
+        .new-colour {
+            background-color: #4a5a4f;
+            color: #fff;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 12px;
+            position: absolute;
+            margin-top: 10px;
+            margin-left: 10px;
+        }
+        .rating {
+            color: #4a5a4f;
+            margin: 10px 0;
+        }
+        .rating i {
+            color: #4a5a4f;
+        }
+        .product-title {
+            font-size: 18px;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+        .product-price {
+            font-size: 16px;
+            color: #4a5a4f;
+            margin: 10px 0;
+        }
+        .product-description {
+            font-size: 14px;
+            color: #4a5a4f;
+            margin: 10px 0;
+        }
+        .color-options {
+            display: flex;
+            justify-content: center;
+            margin: 10px 0;
+        }
+        .color-options div {
+            width: 28px;
+            height: 28px;
+            border-radius: 15px;
+            margin: 0 5px;
+            border: 2px solid #fff;
+            cursor: pointer;
+            position: relative;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            box-shadow: 0 0 0 1px #e6e6e6;
+            outline: none;
+        }
+        .color-options div:hover {
+            outline: 2px solid #4a5a4f;
+        }
+        .color-options div:hover::before {
+            content: attr(data-color-name);
+            position: absolute;
+            top: -25px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #4a5a4f;
+            color: #fff;
+            padding: 2px 5px;
+            border-radius: 5px;
+            font-size: 12px;
+            white-space: nowrap;
+        }
+        .color1 {
+            background-image: url('//heveya.id/cdn/shop/files/Blush_Mauve_500x.jpg?v=1693985613');
+        }
+        .color2 {
+            background-image: url('//heveya.id/cdn/shop/files/Blush_Mauve_500x.jpg?v=1693985613');
+        }
+        .color3 {
+            background-image: url('//heveya.id/cdn/shop/files/Blush_Mauve_500x.jpg?v=1693985613');
+        }
+        .color4 {
+            background-image: url('//heveya.id/cdn/shop/files/Blush_Mauve_500x.jpg?v=1693985613');
+        }
+        .more-colors {
+            font-size: 14px;
+            color: #4a5a4f;
+            margin-top: 10px;
+        }
+  </style>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const colorOptions = document.querySelectorAll('.color-options div');
+        colorOptions.forEach(option => {
+            option.addEventListener('mouseover', function() {
+                const mainImage = this.closest('.product-card').querySelector('.main-image');
+                mainImage.src = this.getAttribute('data-image');
+            });
+        });
+    });
+  </script>
+ </head>
+ <body>
+  <div class="container">
+   <div class="product-card">
+    <div class="new-colour">
+     NEW COLOUR
+    </div>
+    <img alt="Sage colored bamboo duvet sheet set" class="main-image" height="300" src="https://oaidalleapiprodscus.blob.core.windows.net/private/org-BVbpSZmLndA7MfHIxv2ahIKS/user-IBY8IaMXtVn7IVIdZeyvjx16/img-Buvuo8xrqF7Uj7xV51sHWmQM.png?st=2024-09-09T12%3A50%3A38Z&amp;se=2024-09-09T14%3A50%3A38Z&amp;sp=r&amp;sv=2024-08-04&amp;sr=b&amp;rscd=inline&amp;rsct=image/png&amp;skoid=d505667d-d6c1-4a0a-bac7-5c84a87759f8&amp;sktid=a48cca56-e6da-484e-a814-9c849652bcb3&amp;skt=2024-09-08T21%3A53%3A02Z&amp;ske=2024-09-09T21%3A53%3A02Z&amp;sks=b&amp;skv=2024-08-04&amp;sig=/uVx6O1GgOcVnyEvgGwwTRuz9jRZQ0XnfmNdujFf6js%3D" width="300"/>
+    <div class="rating">
+     <i class="fas fa-star">
+     </i>
+     <i class="fas fa-star">
+     </i>
+     <i class="fas fa-star">
+     </i>
+     <i class="fas fa-star">
+     </i>
+     <i class="fas fa-star">
+     </i>
+     <span>
+      23
+     </span>
+    </div>
+    <div class="product-title">
+     Heveya® Bamboo Duvet Sheet Set
+    </div>
+    <div class="product-price">
+     Rp 2.750.000
+     <span style="font-size: 12px;">
+      KING
+     </span>
+    </div>
+    <div class="product-description">
+     A silky smooth protective cover for your duvet insert - made with 100% bamboo lyocell. Comes with four...
+    </div>
+    <div class="color-options">
+     <div class="color1" data-color-name="White" data-image="https://oaidalleapiprodscus.blob.core.windows.net/private/org-BVbpSZmLndA7MfHIxv2ahIKS/user-IBY8IaMXtVn7IVIdZeyvjx16/img-Buvuo8xrqF7Uj7xV51sHWmQM.png?st=2024-09-09T12%3A50%3A38Z&amp;se=2024-09-09T14%3A50%3A38Z&amp;sp=r&amp;sv=2024-08-04&amp;sr=b&amp;rscd=inline&amp;rsct=image/png&amp;skoid=d505667d-d6c1-4a0a-bac7-5c84a87759f8&amp;sktid=a48cca56-e6da-484e-a814-9c849652bcb3&amp;skt=2024-09-08T21%3A53%3A02Z&amp;ske=2024-09-09T21%3A53%3A02Z&amp;sks=b&amp;skv=2024-08-04&amp;sig=/uVx6O1GgOcVnyEvgGwwTRuz9jRZQ0XnfmNdujFf6js%3D">
+     </div>
+     <div class="color2" data-color-name="Peach" data-image="https://oaidalleapiprodscus.blob.core.windows.net/private/org-BVbpSZmLndA7MfHIxv2ahIKS/user-IBY8IaMXtVn7IVIdZeyvjx16/img-2SooJRK3572KrBZwG7fujHLW.png?st=2024-09-09T12%3A50%3A36Z&amp;se=2024-09-09T14%3A50%3A36Z&amp;sp=r&amp;sv=2024-08-04&amp;sr=b&amp;rscd=inline&amp;rsct=image/png&amp;skoid=d505667d-d6c1-4a0a-bac7-5c84a87759f8&amp;sktid=a48cca56-e6da-484e-a814-9c849652bcb3&amp;skt=2024-09-09T03%3A10%3A00Z&amp;ske=2024-09-10T03%3A10%3A00Z&amp;sks=b&amp;skv=2024-08-04&amp;sig=um/%2B9TWqsDlxfXCmpyQGMMrX9TQ%2BQ1xc9M7DAfRA0n0%3D">
+     </div>
+     <div class="color3" data-color-name="Sage" data-image="https://oaidalleapiprodscus.blob.core.windows.net/private/org-BVbpSZmLndA7MfHIxv2ahIKS/user-IBY8IaMXtVn7IVIdZeyvjx16/img-gKayM1BWEuLNlXP6zbAxMK73.png?st=2024-09-09T12%3A50%3A38Z&amp;se=2024-09-09T14%3A50%3A38Z&amp;sp=r&amp;sv=2024-08-04&amp;sr=b&amp;rscd=inline&amp;rsct=image/png&amp;skoid=d505667d-d6c1-4a0a-bac7-5c84a87759f8&amp;sktid=a48cca56-e6da-484e-a814-9c849652bcb3&amp;skt=2024-09-08T22%3A22%3A17Z&amp;ske=2024-09-09T22%3A22%3A17Z&amp;sks=b&amp;skv=2024-08-04&amp;sig=//nTYx5/kUVtJPlqwPmxYeqebII3OwGXpAsm99%2BeS40%3D">
+     </div>
+     <div class="color4" data-color-name="Charcoal" data-image="https://oaidalleapiprodscus.blob.core.windows.net/private/org-BVbpSZmLndA7MfHIxv2ahIKS/user-IBY8IaMXtVn7IVIdZeyvjx16/img-gDTDmNokGYvZgpi8Qo94Rkoj.png?st=2024-09-09T12%3A50%3A35Z&amp;se=2024-09-09T14%3A50%3A35Z&amp;sp=r&amp;sv=2024-08-04&amp;sr=b&amp;rscd=inline&amp;rsct=image/png&amp;skoid=d505667d-d6c1-4a0a-bac7-5c84a87759f8&amp;sktid=a48cca56-e6da-484e-a814-9c849652bcb3&amp;skt=2024-09-09T02%3A43%3A16Z&amp;ske=2024-09-10T02%3A43%3A16Z&amp;sks=b&amp;skv=2024-08-04&amp;sig=2fG1U8eP10hpi0ZGwt9q8DY1P5B3bdihfSEFn3aMIyk%3D">
+     </div>
+    </div>
+    <div class="more-colors">
+     +5 more
+    </div>
+   </div>
+   <div class="product-card">
+    <div class="new-colour">
+     NEW COLOUR
+    </div>
+    <img alt="White colored bamboo fitted sheet set" class="main-image" height="300" src="https://oaidalleapiprodscus.blob.core.windows.net/private/org-BVbpSZmLndA7MfHIxv2ahIKS/user-IBY8IaMXtVn7IVIdZeyvjx16/img-2SooJRK3572KrBZwG7fujHLW.png?st=2024-09-09T12%3A50%3A36Z&amp;se=2024-09-09T14%3A50%3A36Z&amp;sp=r&amp;sv=2024-08-04&amp;sr=b&amp;rscd=inline&amp;rsct=image/png&amp;skoid=d505667d-d6c1-4a0a-bac7-5c84a87759f8&amp;sktid=a48cca56-e6da-484e-a814-9c849652bcb3&amp;skt=2024-09-09T03%3A10%3A00Z&amp;ske=2024-09-10T03%3A10%3A00Z&amp;sks=b&amp;skv=2024-08-04&amp;sig=um/%2B9TWqsDlxfXCmpyQGMMrX9TQ%2BQ1xc9M7DAfRA0n0%3D" width="300"/>
+    <div class="rating">
+     <i class="fas fa-star">
+     </i>
+     <i class="fas fa-star">
+     </i>
+     <i class="fas fa-star">
+     </i>
+     <i class="fas fa-star">
+     </i>
+     <i class="fas fa-star">
+     </i>
+     <span>
+      27
+     </span>
+    </div>
+    <div class="product-title">
+     Heveya® Bamboo Fitted Sheet Set
+    </div>
+    <div class="product-price">
+     Rp 1.850.000
+     <span style="font-size: 12px;">
+      KING
+     </span>
+    </div>
+    <div class="product-description">
+     With an elasticated band all around for a nice &amp; snug fit, our fitted sheet set is naturally hypoallergenic,...
+    </div>
+    <div class="color-options">
+     <div class="color1" data-color-name="White" data-image="https://oaidalleapiprodscus.blob.core.windows.net/private/org-BVbpSZmLndA7MfHIxv2ahIKS/user-IBY8IaMXtVn7IVIdZeyvjx16/img-Buvuo8xrqF7Uj7xV51sHWmQM.png?st=2024-09-09T12%3A50%3A38Z&amp;se=2024-09-09T14%3A50%3A38Z&amp;sp=r&amp;sv=2024-08-04&amp;sr=b&amp;rscd=inline&amp;rsct=image/png&amp;skoid=d505667d-d6c1-4a0a-bac7-5c84a87759f8&amp;sktid=a48cca56-e6da-484e-a814-9c849652bcb3&amp;skt=2024-09-08T21%3A53%3A02Z&amp;ske=2024-09-09T21%3A53%3A02Z&amp;sks=b&amp;skv=2024-08-04&amp;sig=/uVx6O1GgOcVnyEvgGwwTRuz9jRZQ0XnfmNdujFf6js%3D">
+     </div>
+     <div class="color2" data-color-name="Peach" data-image="https://oaidalleapiprodscus.blob.core.windows.net/private/org-BVbpSZmLndA7MfHIxv2ahIKS/user-IBY8IaMXtVn7IVIdZeyvjx16/img-2SooJRK3572KrBZwG7fujHLW.png?st=2024-09-09T12%3A50%3A36Z&amp;se=2024-09-09T14%3A50%3A36Z&amp;sp=r&amp;sv=2024-08-04&amp;sr=b&amp;rscd=inline&amp;rsct=image/png&amp;skoid=d505667d-d6c1-4a0a-bac7-5c84a87759f8&amp;sktid=a48cca56-e6da-484e-a814-9c849652bcb3&amp;skt=2024-09-09T03%3A10%3A00Z&amp;ske=2024-09-10T03%3A10%3A00Z&amp;sks=b&amp;skv=2024-08-04&amp;sig=um/%2B9TWqsDlxfXCmpyQGMMrX9TQ%2BQ1xc9M7DAfRA0n0%3D">
+     </div>
+     <div class="color3" data-color-name="Sage" data-image="https://oaidalleapiprodscus.blob.core.windows.net/private/org-BVbpSZmLndA7MfHIxv2ahIKS/user-IBY8IaMXtVn7IVIdZeyvjx16/img-gKayM1BWEuLNlXP6zbAxMK73

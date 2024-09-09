@@ -1,0 +1,82 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Button Example</title>
+  <style>
+    /* Global Styles */
+    :root {
+      --colors--primary-black: #171717;
+      --colors--primary-purple: #683ee0;
+      --colors--primary-white: white;
+      --colors--hover-background: #e03a1e;
+      --colors--hover-text: var(--colors--primary-black);
+      --font-family: Arial, sans-serif;
+      --font-size: 16px;
+      --line-height: 20px;
+    }
+
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #f0f0f0;
+      font-family: var(--font-family);
+      font-size: var(--font-size);
+      line-height: var(--line-height);
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    /* Base Button Styling */
+    .button {
+      background-color: var(--colors--primary-purple); /* Background color */
+      padding: 10px 20px; /* Padding */
+      border: none;
+      border-radius: 8px;
+      font-size: var(--font-size);
+      font-family: var(--font-family);
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      text-align: center;
+      color: var(--colors--primary-white);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .button::before {
+      content: "Try for free";
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: transform 0.3s ease;
+    }
+
+    .button:hover::before {
+      transform: translateY(-100%);
+    }
+
+    /* Hover Effect */
+    .button:hover {
+      background-color: var(--colors--hover-background);
+    }
+
+    /* Focus Effect for Accessibility */
+    .button:focus {
+      outline: 3px solid var(--colors--primary-purple); /* Outline for focus state */
+      outline-offset: 2px;
+    }
+  </style>
+</head>
+<body>
+  <button class="button">Try for free</button>
+</body>
+</html>

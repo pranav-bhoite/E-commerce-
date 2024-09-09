@@ -1,0 +1,134 @@
+<html>
+<head>
+    <title>Product Listing</title>
+    <script src="https://unpkg.com/react/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"></link>
+    <style>
+        body {
+            background-color: #f5f5ef;
+            font-family: 'Arial', sans-serif;
+        }
+        .product-image {
+            transition: opacity 0.3s ease-in-out;
+        }
+        .product-image-hover {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+        }
+        .product-image-container:hover .product-image {
+            opacity: 0;
+        }
+        .product-image-container:hover .product-image-hover {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+        const products = [
+            {
+                id: 1,
+                image: "https://placehold.co/300x300",
+                hoverImage: "https://placehold.co/300x300?text=Hover+Image+1",
+                alt: "Heveya Bamboo Duvet Sheet Set",
+                rating: 5,
+                reviews: 23,
+                title: "Heveya® Bamboo Duvet Sheet Set",
+                price: "Rp 2.750.000",
+                size: "KING",
+                description: "A silky smooth protective cover for your duvet insert - made with 100% bamboo lyocell. Comes with four...",
+                colors: ["#ffffff", "#d3cfcf", "#c5d0c1", "#e5d0c1"]
+            },
+            {
+                id: 2,
+                image: "https://placehold.co/300x300",
+                hoverImage: "https://placehold.co/300x300?text=Hover+Image+2",
+                alt: "Heveya Bamboo Fitted Sheet Set",
+                rating: 5,
+                reviews: 27,
+                title: "Heveya® Bamboo Fitted Sheet Set",
+                price: "Rp 1.850.000",
+                size: "KING",
+                description: "With an elasticated band all around for a nice & snug fit, our fitted sheet set is naturally hypoallergenic,...",
+                colors: ["#ffffff", "#d3cfcf", "#c5d0c1", "#e5d0c1"]
+            },
+            {
+                id: 3,
+                image: "https://placehold.co/300x300",
+                hoverImage: "https://placehold.co/300x300?text=Hover+Image+3",
+                alt: "Heveya Linen Duvet Sheet Set",
+                rating: 5,
+                reviews: 15,
+                title: "Heveya® Linen Duvet Sheet Set",
+                price: "Rp 3.600.000",
+                size: "KING",
+                description: "A luxuriously textured protective cover for your duvet insert - comes with four corner ties and a coconut...",
+                colors: ["#f5e0d0", "#ffffff", "#d3cfcf", "#c5d0c1"]
+            },
+            {
+                id: 4,
+                image: "https://placehold.co/300x300",
+                hoverImage: "https://placehold.co/300x300?text=Hover+Image+4",
+                alt: "Heveya Linen Fitted Sheet Set",
+                rating: 5,
+                reviews: 8,
+                title: "Heveya® Linen Fitted Sheet Set",
+                price: "Rp 2.850.000",
+                size: "KING",
+                description: "With an elasticated band all around to fit over your mattress nice & snug! Made from 100% ethically...",
+                colors: ["#f5e0d0", "#ffffff", "#d3cfcf", "#c5d0c1"]
+            }
+        ];
+
+        const ProductCard = ({ product }) => (
+            <div className="bg-white p-4 rounded-lg shadow-md">
+                <div className="relative product-image-container">
+                    <img src={product.image} alt={product.alt} className="w-full h-64 object-cover rounded-lg product-image" />
+                    <img src={product.hoverImage} alt={product.alt} className="w-full h-64 object-cover rounded-lg product-image-hover" />
+                    <span className="absolute top-2 left-2 bg-green-700 text-white text-xs px-2 py-1 rounded">NEW COLOUR</span>
+                </div>
+                <div className="mt-4">
+                    <div className="flex items-center">
+                        <div className="flex text-green-700">
+                            {Array.from({ length: product.rating }).map((_, index) => (
+                                <i key={index} className="fas fa-star"></i>
+                            ))}
+                        </div>
+                        <span className="ml-2 text-gray-600">{product.reviews}</span>
+                    </div>
+                    <h2 className="mt-2 text-lg font-semibold">{product.title}</h2>
+                    <p className="text-gray-600">{product.price} <span className="text-xs">KING</span></p>
+                    <p className="text-gray-500 text-sm mt-2">{product.description}</p>
+                    <div className="flex items-center mt-4">
+                        {product.colors.map((color, index) => (
+                            <span key={index} className="w-6 h-6 rounded-full mr-2" style={{ backgroundColor: color }}></span>
+                        ))}
+                        <span className="text-gray-500 text-sm">+5 more</span>
+                    </div>
+                </div>
+            </div>
+        );
+
+        const App = () => (
+            <div className="container mx-auto p-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    {products.map(product => (
+                        <ProductCard key={product.id} product={product} />
+                    ))}
+                </div>
+            </div>
+        );
+
+        ReactDOM.render(<App />, document.getElementById('root'));
+    </script>
+</body>
+</html>
