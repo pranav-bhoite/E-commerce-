@@ -1,11 +1,10 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Discover Your Dream Bedroom</title>
-    <script src="https://unpkg.com/react/umd/react.development.js"></script>
-    <script src="https://unpkg.com/react-dom/umd/react-dom.development.js"></script>
-    <script src="https://unpkg.com/@babel/standalone/babel.js"></script>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"></link>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@glidejs/glide@3.4.1/dist/css/glide.core.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@glidejs/glide@3.4.1/dist/css/glide.theme.min.css">
     <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide@3.4.1/dist/glide.min.js"></script>
@@ -13,80 +12,118 @@
         body {
             font-family: 'Arial', sans-serif;
             background-color: #f5f2eb;
+            margin: 0;
+            padding: 0;
         }
-        .hotspot {
-            position: absolute;
-            border: 1px solid #5d7261;
-            border-radius: 25px;
-            width: 30px;
-            height: 30px;
-            display: inline-block;
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: #f5f2eb;
+            padding: 20px;
+        }
+        .content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 75%;
+            background-color: #f5f2eb;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+        .text-section {
+            width: 50%;
+            padding-right: 20px;
+        }
+        .text-section h1 {
+            font-size: 32px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        .text-section p {
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+        .button-group {
+            display: flex;
+            gap: 10px;
+        }
+        .button-group button {
+            width: 40px;
+            height: 40px;
+            background-color: white;
+            border-radius: 50%;
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
             cursor: pointer;
-            transition: 0.3s ease all;
+            border: none;
         }
-        .ha-heveya-bamboo-pillow-cases {
-            left: 40%;
-            top: 45%;
+        .image-section {
+            width: 50%;
+            position: relative;
         }
-        @media screen and (min-width: 1024px) {
-            .ha-heveya-bamboo-pillow-cases {
-                left: 40%;
-                top: 45%;
-            }
+        .image-section img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .glide {
+            width: 75%;
+        }
+        .glide__slide img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
         }
     </style>
 </head>
 <body>
-    <div id="root"></div>
-    <script type="text/babel">
-        function App() {
-            return (
-                <div className="flex flex-col items-center justify-center bg-[#f5f2eb]">
-                    <div className="flex items-center justify-between w-3/4 bg-[#f5f2eb] p-8 rounded-lg shadow-lg mb-8">
-                        <div className="w-1/2 pr-8">
-                            <h1 className="text-4xl font-semibold mb-4">Discover your dream bedroom</h1>
-                            <p className="text-lg mb-8">Shop the look with our most-sought after bedroom essentials, all made from sustainable materials and uniquely Heveya®.</p>
-                            <div className="flex space-x-4">
-                                <button className="w-10 h-10 bg-white rounded-full shadow-md flex items-center justify-center">
-                                    <i className="fas fa-chevron-left"></i>
-                                </button>
-                                <button className="w-10 h-10 bg-white rounded-full shadow-md flex items-center justify-center">
-                                    <i className="fas fa-chevron-right"></i>
-                                </button>
-                            </div>
-                        </div>
-                        <div className="w-1/2 relative">
-                            <img src="https://placehold.co/600x400" alt="A cozy bedroom with a wooden bed frame, grey bedding, and large windows letting in natural light" className="rounded-lg shadow-lg"/>
-                            <div id="hotspot" className="ha-natural-organic-latex-mattress-iii hotspot" data-tippy-duration="" data-tippy-arrow="true" data-tippy-delay="" data-tippy-content="<a href='/products/natural-organic-latex-mattress-iii' class='p3 c-grey'><span>Heveya® Natural Organic Latex Mattress III</span></a>" aria-expanded="true">
-                                <span className="inner"></span>
-                            </div>
-                            <div className="hotspot ha-heveya-bamboo-pillow-cases"></div>
-                        </div>
-                    </div>
-                    <div className="w-3/4">
-                        <div className="glide">
-                            <div className="glide__track" data-glide-el="track">
-                                <ul className="glide__slides">
-                                    <li className="glide__slide"><img src="https://placehold.co/600x400" alt="Slide 1" className="rounded-lg shadow-lg"/></li>
-                                    <li className="glide__slide"><img src="https://placehold.co/600x400" alt="Slide 2" className="rounded-lg shadow-lg"/></li>
-                                    <li className="glide__slide"><img src="https://placehold.co/600x400" alt="Slide 3" className="rounded-lg shadow-lg"/></li>
-                                </ul>
-                            </div>
-                            <div className="glide__arrows" data-glide-el="controls">
-                                <button className="glide__arrow glide__arrow--left" data-glide-dir="<"><i className="fas fa-chevron-left"></i></button>
-                                <button className="glide__arrow glide__arrow--right" data-glide-dir=">"><i className="fas fa-chevron-right"></i></button>
-                            </div>
-                        </div>
-                    </div>
+    <div class="container">
+        <!-- Main Content Section -->
+        <div class="content">
+            <div class="text-section">
+                <h1>Discover Your Dream Bedroom</h1>
+                <p>Shop the look with our most-sought after bedroom essentials, all made from sustainable materials and uniquely Heveya®.</p>
+                <div class="button-group">
+                    <button><i class="fas fa-chevron-left"></i></button>
+                    <button><i class="fas fa-chevron-right"></i></button>
                 </div>
-            );
-        }
+            </div>
+            <div class="image-section">
+                <img src="https://placehold.co/600x400" alt="A cozy bedroom with a wooden bed frame, grey bedding, and large windows letting in natural light">
+            </div>
+        </div>
 
-        ReactDOM.render(<App />, document.getElementById('root'));
+        <!-- Glide Carousel -->
+        <div class="glide">
+            <div class="glide__track" data-glide-el="track">
+                <ul class="glide__slides">
+                    <li class="glide__slide">
+                        <img src="https://placehold.co/600x400" alt="Slide 1">
+                    </li>
+                    <li class="glide__slide">
+                        <img src="https://placehold.co/600x400" alt="Slide 2">
+                    </li>
+                    <li class="glide__slide">
+                        <img src="https://placehold.co/600x400" alt="Slide 3">
+                    </li>
+                </ul>
+            </div>
+            <div class="glide__arrows" data-glide-el="controls">
+                <button class="glide__arrow glide__arrow--left" data-glide-dir="<"><i class="fas fa-chevron-left"></i></button>
+                <button class="glide__arrow glide__arrow--right" data-glide-dir=">"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </div>
+    </div>
 
-        document.addEventListener('DOMContentLoaded', function () {
-            new Glide('.glide').mount();
-        });
+    <script>
+        // Initialize the Glide.js slider
+        new Glide('.glide').mount();
     </script>
 </body>
 </html>
